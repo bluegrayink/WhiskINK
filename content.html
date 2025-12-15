@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aika Sesilia</title>
+  <meta name="description" content="Custom Deskmat from Indonesia." />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../assets/css/styles.css" />
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const referrer = document.referrer; 
+        const allowedReferrers = ["index.html"];
+
+        const isAllowedReferrer = allowedReferrers.some(page => referrer.includes(page));
+        if (!isAllowedReferrer || !localStorage.getItem("isLoggedIn")) {
+            window.location.href = "index.html"; 
+        }
+
+        const redirectTimeout = 1800000;
+
+        setTimeout(() => {
+            alert("Session expired. Redirecting to homepage...");
+            window.location.href = "index.html";
+        }, redirectTimeout);
+
+        document.addEventListener('contextmenu', (e) => {
+            if (e.target.tagName === 'IMG' || e.target.tagName === 'VIDEO') {
+                e.preventDefault();
+            }
+        });
+
+        document.querySelectorAll('img').forEach(img => {
+            img.addEventListener('dragstart', event => event.preventDefault());
+        });
+
+
+        document.getElementById("logoutButton").addEventListener("click", () => {
+            sessionStorage.removeItem("accessGranted");
+            localStorage.removeItem("isLoggedIn");
+            window.location.href = "index.html";
+        });
+    });
+</script>
+</head>
+<body class="min-h-screen flex flex-col items-center py-12 px-4">
+  
+<div class="w-full max-w-md mb-10">
+  <header class="text-center mb-6">
+    <h1 class="text-3xl font-semibold text-gray-800 mb-1">WhiskINK</h1>
+  </header>
+</div>
+
+<div class="w-full max-w-md content-card mb-12">
+  <div class="p-6 space-y-5">
+    <section class="space-y-2">
+      <h1 class="section-title">Aika Sesilia</h1>
+      
+        <div class="p-2">
+		<video controls class="protected-video" controlsList="nodownload">
+                <source src="../assets/video/vid_aika.mp4" type="video/mp4">
+            	</video>
+        </div>
+    </section>
+    </div>
+    </div>
+
+<!-- Contact -->
+<div class="w-full max-w-md mb-10">
+  <h2 class="section-title text-center mb-4">Contact</h2>
+  <div class="flex justify-center gap-4">
+    <a href="https://wa.me/6281210005912" class="social-btn"><i class="fab fa-whatsapp text-lg"></i></a>
+    <a href="mailto:alabert@bluegrayink.com" class="social-btn"><i class="far fa-envelope text-lg"></i></a>
+  </div>
+</div>
+
+<footer class="mt-auto text-center text-xs text-gray-400 pt-6">
+  © 2025 Bluegray Ink. All rights reserved.
+</footer>
+
+<script src="../assets/js/main.js"></script>
+</body>
+</html>
