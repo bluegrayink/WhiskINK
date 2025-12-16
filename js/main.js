@@ -1,7 +1,14 @@
 const uidToPageMap = {
-    "contentaika.html": ["5D5E93C4", "9D22A0C4", "3DC197C4", "2D2193C4", "AD7388C4", "5D26A2C4", "BD2011C4", "CD06A2C4", "ED3D88C4", "5DE57DC4"],
-    "contentlily.html": ["C4A7FA92", "04870593", "341E0C93", "34D90393"],
-    "contentthela.html":["C4F00B93", "84F0F892", "04A80593", "B4F3F892"]
+  "contentaika.html": [
+    "5D5E93C4", "9D22A0C4", "3DC197C4", "2D2193C4", "AD7388C4", 
+    "5D26A2C4", "BD2011C4", "CD06A2C4", "ED3D88C4", "5DE57DC4"
+  ],
+  "contentlily.html": [
+    "C4A7FA92", "04870593", "341E0C93", "34D90393"
+  ],
+  "contentthela.html": [
+    "C4F00B93", "84F0F892", "04A80593", "B4F3F892"
+  ]
 };
 
 // Elements
