@@ -1,0 +1,204 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    margin: 10px;
+    font-size: 1.8em;
+    color: #4B4E53;	
+}
+
+h2 {
+    margin-left: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-size: 1em;
+    color: #4B4E53; 
+}
+
+/* Profile container */
+.profile-container {
+    display: flex;
+    align-items: flex-start; /* Align konten ke atas */
+    justify-content: center; /* Pusatkan konten */
+	gap: 5px;
+}
+
+/* Profile picture */
+.profile-picture {
+    width: 100px; /* Adjust the size as needed */
+    height: 100px;
+    border-radius: 50%; /* Makes the image circular */
+    object-fit: cover; /* Ensure image maintains aspect ratio */
+    border: 2px solid #999; /* Optional border */
+}
+
+/* Text container */
+.profile-text {
+    display: flex;
+    flex-direction: column; /* Stacks h1 above h2 */
+    justify-content: space-between; /* Space out h1 and h2 vertically */
+    height: 100%; /* Makes sure h1 and h2 take the full height of the parent */
+    text-align: left; /* Align text to the left */
+}
+
+/* Gallery container */
+.photo-gallery, .video-gallery, .audio-gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    text-align: center;
+    margin: 20px auto;
+}
+
+/* Image and video styles */
+.photo-gallery img, .video-gallery video {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.audio-gallery audio {
+    width: 100%;
+    max-width: 400px;
+    border-radius: 10px;
+}
+
+.video-gallery video {
+    max-width: 600px;
+}
+
+/* Button styles */
+button {
+            background:  transparent;
+            height:  40px;
+             border:  2px solid #4B4E53;
+             display:  inline-block;
+             float:  none;
+             text-align:  center;
+             width:  100px;
+             padding:  0px;
+             font-size:  16px;
+            color: #4B4E53;
+            cursor: pointer;
+            border-radius: 15px;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+button:hover {
+    background-color: #4B4E53;
+    color: #fdfdfd;
+}
+
+.indexBtn{
+width:  150px;
+}
+
+#logoutButton {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #666;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#logoutButton:hover {
+    background-color: #555;
+}
+
+/* Image container */
+.image-container {
+    position: relative;
+    display: inline-block;
+}
+
+.protected-img,
+.protected-video {
+    user-select: none; /* Prevent text selection */
+    -webkit-user-drag: none; /* Prevent drag */
+}
+
+/* Overlay to prevent right-click */
+.protected-img::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: transparent;
+    z-index: 2; /* Layer above image */
+    pointer-events: none;
+}
+
+/* Hidden class for sections */
+.hidden {
+    display: none;
+}
+
+ div.animated {
+            position: absolute;
+            visibility: hidden;
+            animation-name: fadeIn;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes fadeIn {
+            from {opacity: 0; transform: translateY(0);}
+            to {opacity: 1; transform: translateY(20px); visibility: visible;}
+        }
+
+.container {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+.social-icons a {
+    display: inline-block;
+    text-decoration: none;
+    border: none; /* Hilangkan garis default di sekitar tautan */
+    margin: 0;
+    padding: 5px;
+    margin-bottom: 20px;
+}
+
+.business-collab {
+    text-align: center; /* Meratakan teks ke tengah */
+    font-family: Arial, sans-serif; /* Sesuaikan dengan font Anda */
+    margin-bottom: 20px;
+}
+
+.email-section {
+    display: flex; /* Gunakan flexbox untuk menyusun ikon dan teks */
+    justify-content: center; /* Meratakan elemen secara horizontal */
+    align-items: center; /* Meratakan elemen secara vertikal */
+    gap: 8px; /* Menambahkan jarak antara ikon dan teks */
+}
+
+.email-section img {
+    width: 24px; /* Sesuaikan ukuran ikon */
+    height: 24px;
+}
+
+.email-section span {
+    font-size: 16px; /* Sesuaikan ukuran teks */
+    color: #4B4E53; /* Sesuaikan warna teks */
+}
+
+.extraButtons {
+    display: flex;
+    justify-content: center; /* Menengahkan secara horizontal */
+    align-items: center; /* Menengahkan secara vertikal (opsional) */
+    margin: 20px auto;
+}
