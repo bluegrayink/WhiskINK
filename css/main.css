@@ -202,3 +202,7 @@ width:  150px;
     align-items: center; /* Menengahkan secara vertikal (opsional) */
     margin: 20px auto;
 }
+
+#log {
+    display: none !important;
+}
