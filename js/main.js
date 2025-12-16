@@ -12,7 +12,7 @@ const uidToPageMap = {
     "3D3C95C4", "BD12A0C4", "2DFA79C4", "1DDA81C4", "5DF67DC4"
   ],
   "contentthela.html": [
-    "C4F00B93", "84F0F892", "04A80593", "B4F3F892"
+    "CDA3A7C4", "84F0F892", "04A80593", "B4F3F892"
   ]
 };
 
