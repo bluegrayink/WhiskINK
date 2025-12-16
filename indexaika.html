@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aika Sesilia</title>
+    <link rel="stylesheet" href="../testnfc/styles/main.css">
+   <script>
+        // Prevent viewing source code using Ctrl+U
+        document.addEventListener('keydown', (e) => {
+            if (e.ctrlKey && e.key === 'u') {
+                e.preventDefault();
+            }
+        });
+
+        // Redirect non-Android and non-iOS Safari users
+       window.onload = function() {
+            var userAgent = navigator.userAgent;
+
+            // Cek apakah pengguna menggunakan Safari di iPhone
+            var isSafariIphone = /iPhone/.test(userAgent) && /Safari/.test(userAgent);
+            // Cek apakah pengguna menggunakan browser di Android
+            var isAndroidBrowser = /Android/.test(userAgent);
+
+            if (!isSafariIphone && !isAndroidBrowser) {
+                document.body.innerHTML = "<h1>Website ini hanya dapat diakses melalui Safari di iPhone atau browser di Android.</h1>";
+            }
+        };
+    </script>
+</head>
+<body style="background-color: #ffd0d7;">
+    <h1>WhiskINK</h1>
+    <div class="photo-gallery">
+        <img src="/testnfc/Photo/Jetsukii/indexjetsukii00.jpg" alt="index Jet" class="protected-img">
+        <h2>Aika Sesilia</h2>
+    </div>
+
+    <h2>--- See the Content! ---</h2>
+    <button id="scanButton"><b>Android</b></button>
+    <button id="iphoneButton"><b>iOS</b></button>
+
+     <!-- Android Section -->
+    <div id="androidSection" style="display: none; margin-top: 20px;">
+        <h2>Tap your NFC card to scan</h2>
+    </div>
+    
+    <!-- iPhone Section -->
+    <div id="iphoneSection" style="display: none; margin-top: 20px;">
+        <h2>Scan the QR code in the card for check the UID</h2>
+        <label for="uidInput">Enter UID:</label>
+        <input type="text" id="uidInput" placeholder="Enter your NFC UID here">
+        <button id="submitUidButton">Submit</button>
+    </div>
+
+    <div id="status"></div>
+    <div id="log"></div>
+    <script src="new.js"></script>
+</body>
+</html>
