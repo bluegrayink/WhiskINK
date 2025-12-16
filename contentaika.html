@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Aika Sesilia</title>
+    <link rel="stylesheet" href="css/main.css">
+
+    <style>
+        .hidden {
+            display: none;
+        }
+
+         .container {
+            position: relative;
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        div.animated {
+            position: absolute;
+            visibility: hidden;
+            animation-name: fadeIn;
+            animation-duration: 1s;
+            animation-fill-mode: forwards;
+        }
+
+        @keyframes fadeIn {
+            from {opacity: 0; transform: translateY(0);}
+            to {opacity: 1; transform: translateY(20px); visibility: visible;}
+        }
+
+        img, video {
+            max-width: 100%;
+            height: auto;
+        }
+    </style>
+
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const referrer = document.referrer; 
+        const allowedReferrers = ["indexaika.html"];
+
+        const isAllowedReferrer = allowedReferrers.some(page => referrer.includes(page));
+        if (!isAllowedReferrer || !localStorage.getItem("isLoggedIn")) {
+            window.location.href = "indexaika.html"; 
+        }
+
+        const redirectTimeout = 1800000;
+
+        setTimeout(() => {
+            alert("Session expired. Redirecting to homepage...");
+            window.location.href = "indexaika.html";
+        }, redirectTimeout);
+
+        document.addEventListener('contextmenu', (e) => {
+            if (e.target.tagName === 'IMG' || e.target.tagName === 'VIDEO') {
+                e.preventDefault();
+            }
+        });
+
+        document.querySelectorAll('img').forEach(img => {
+            img.addEventListener('dragstart', event => event.preventDefault());
+        });
+
+        document.getElementById("logoutButton").addEventListener("click", () => {
+            sessionStorage.removeItem("accessGranted");
+            localStorage.removeItem("isLoggedIn");
+            window.location.href = "indexaika.html";
+        });
+    });
+</script>
+</head>
+
+<body>
+    <h1>Aika Sesilia</h1>
+    <div class="container">
+        <!-- Photo gallery -->
+        <div class="photo-gallery">
+			<h1>Video Virtual Date</h1>
+           <source src="video/vid_aika.mp4" type="video/mp4">
+        </div>
+    </div>
+</body>
+</html>
