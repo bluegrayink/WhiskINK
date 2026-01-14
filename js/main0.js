@@ -1,5 +1,5 @@
 const uidToPageMap = {
-  "content.html": [
+  "whiskink.html": [
     "5D5E93C4", "9D22A0C4", "3DC197C4", "2D2193C4", "AD7388C4", 
     "5D26A2C4", "BD2011C4", "CD06A2C4", "ED3D88C4", "5DE57DC4",
     "4D9A4BC4", "4D2B91C4", "8DF69FC4", "EDF38EC4", "6D868CC4",
